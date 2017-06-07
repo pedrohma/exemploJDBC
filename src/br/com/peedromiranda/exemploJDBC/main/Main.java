@@ -53,6 +53,7 @@ public class Main {
 			System.out.println("Digite o id do contato:");
 			id = s.nextInt();
 			contato = contatoDao.encontrar(id);
+			if(contato != null){
 			System.out.println("Dados do contato: \n" + contato.toString());
 			System.out.println("Digite o nome do contato:");
 			contato.setNome(s.nextLine());
@@ -62,6 +63,11 @@ public class Main {
 			contato.setEmail(s.nextLine());
 			contatoDao.salvar(contato);
 			System.out.println(contato.getNome() + " alterado com sucesso!");
+			}
+			else{
+				System.out.println("Contato não encontrado, tente novamente.");
+			}
+			
 			break;
 		case 4:
 			System.out.println("Digite o id do contato:");
