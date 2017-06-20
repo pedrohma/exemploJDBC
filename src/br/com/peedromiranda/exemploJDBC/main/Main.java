@@ -73,7 +73,12 @@ public class Main {
 			System.out.println("Digite o id do contato:");
 			id = s.nextInt();
 			contato = contatoDao.encontrar(id);
-			System.out.println(contato.toString());
+			if(contato != null){
+				System.out.println(contato.toString());
+			}
+			else{
+				System.out.println("Contato não encontrado, tente outro id.");
+			}			
 			break;
 		case 5:
 			for (Contato contato2 : listaContatos) {
